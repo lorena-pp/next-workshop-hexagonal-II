@@ -3,5 +3,5 @@ package es.nextdigital.musicapp.application.port.out;
 import es.nextdigital.musicapp.domain.User;
 
 public interface EmailNotificationPort {
-    void SendFavouriteLimitReachedEmail(User user);
+    void sendFavouriteLimitReachedEmail(User user);
 }

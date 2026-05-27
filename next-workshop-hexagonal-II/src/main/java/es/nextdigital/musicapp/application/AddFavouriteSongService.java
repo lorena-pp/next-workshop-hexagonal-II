@@ -26,7 +26,7 @@ public class AddFavouriteSongService {
         userRepositoryPort.save(user);
 
         if (user.getFavoriteSongIds().size() >= FAVOURITE_LIMIT) {
-            emailNotificationPort.SendFavouriteLimitReachedEmail(user);
+            emailNotificationPort.sendFavouriteLimitReachedEmail(user);
         }
     }
 }
