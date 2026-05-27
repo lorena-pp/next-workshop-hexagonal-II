@@ -10,6 +10,6 @@ public class EmailNotification implements EmailNotificationPort {
     @Override
     public void sendFavouriteLimitReachedEmail(User user) {
         System.out.println("\n[SIMULACIÓN] Enviando email a " + user.getName() + ".....");
-        System.out.println("\n---> ¡Has alcanzado el límite de canciones favoritas!");
+        System.out.println("---> ¡Has alcanzado el límite de canciones favoritas!");
     }
 }
