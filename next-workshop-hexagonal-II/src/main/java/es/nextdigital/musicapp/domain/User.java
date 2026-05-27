@@ -7,7 +7,7 @@ public class User {
     private String id;
     private String name;
     private String email;
-    private List<Long> favoriteSongIds = new ArrayList<>();
+    private List<String> favoriteSongIds = new ArrayList<>();
 
     public User(String id, String name, String email) {
         this.id = id;
@@ -36,7 +36,7 @@ public class User {
         return email;
     }
 
-    public void setFavoriteSongIds(List<Long> favoriteSongIds) {
+    public void setFavoriteSongIds(List<String> favoriteSongIds) {
         this.favoriteSongIds = favoriteSongIds;
     }
 
@@ -44,13 +44,13 @@ public class User {
         this.email = email;
     }
 
-    public void addFavoriteSong(Long songId) {
+    public void addFavoriteSong(String songId) {
         if (!this.favoriteSongIds.contains(songId)) {
             this.favoriteSongIds.add(songId);
         }
     }
 
-    public List<Long> getFavoriteSongIds() {
+    public List<String> getFavoriteSongIds() {
         return favoriteSongIds;
     }
 }
