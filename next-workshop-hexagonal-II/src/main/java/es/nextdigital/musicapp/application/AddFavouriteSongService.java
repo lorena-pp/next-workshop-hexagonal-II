@@ -4,7 +4,9 @@ import es.nextdigital.musicapp.application.port.out.EmailNotificationPort;
 import es.nextdigital.musicapp.domain.User;
 import es.nextdigital.musicapp.domain.UserNotFoundException;
 import es.nextdigital.musicapp.infrastructure.adapter.out.UserInMemoryRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AddFavouriteSongService {
     private final UserInMemoryRepository userRepositoryPort;
     private final EmailNotificationPort emailNotificationPort;
