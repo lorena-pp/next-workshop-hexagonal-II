@@ -1,5 +1,6 @@
 package com.music.streaming.user.infrastructure.rest;
 
+import com.music.streaming.user.application.command.AddFavouriteSongCommand;
 import com.music.streaming.user.application.command.CreateUserCommand;
 import com.music.streaming.user.application.command.DeleteUserCommand;
 import com.music.streaming.user.application.command.UpdateUserCommand;
@@ -29,6 +30,7 @@ import java.util.Optional;
 public class UserController {
     final UserFacadeMapper userFacadeMapper;
     final UserRepositoryPort userRepositoryPort;
+    final AddFavouriteSongCommand addFavouriteSongCommand;
 
     @GetMapping
     public ResponseEntity getAllUsers() {
@@ -86,6 +88,12 @@ public class UserController {
         } catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}/favorites/{songId}")
+    public ResponseEntity<Void> addFavouriteSong(@PathVariable String id, @PathVariable String songId) throws UserNotFoundException {
+        addFavouriteSongCommand.handle(id, songId);
         return ResponseEntity.noContent().build();
     }
 }
