@@ -1,14 +1,19 @@
 package es.nextdigital.musicapp.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String id;
     private String name;
     private String email;
+    private List<Long> favoriteSongIds = new ArrayList<>();
 
     public User(String id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.favoriteSongIds = new ArrayList<>();
     }
 
     public String getId() {
@@ -31,7 +36,21 @@ public class User {
         return email;
     }
 
+    public void setFavoriteSongIds(List<Long> favoriteSongIds) {
+        this.favoriteSongIds = favoriteSongIds;
+    }
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void addFavoriteSong(Long songId) {
+        if (!this.favoriteSongIds.contains(songId)) {
+            this.favoriteSongIds.add(songId);
+        }
+    }
+
+    public List<Long> getFavoriteSongIds() {
+        return favoriteSongIds;
     }
 }
