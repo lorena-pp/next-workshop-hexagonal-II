@@ -3,6 +3,8 @@ package com.music.streaming.user.domain;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -16,4 +18,13 @@ public class User {
     String username;
     @With
     String email;
+    @With
+    private List<String> favouriteSongIds = new ArrayList<>();
+
+    public void addFavouriteSong(String songId) {
+        if (!this.favouriteSongIds.contains(songId)) {
+            this.favouriteSongIds.add(songId);
+        }
+    }
+
 }
