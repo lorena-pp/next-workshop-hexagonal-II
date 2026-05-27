@@ -1,5 +1,7 @@
 # FEAT: añadir canciones favoritas
 
+### (más tarde me di cuenta de que tenía que implementarlo en \music-hexagonal, no en \next-workshop-hexagonal-II (aquí). Encontrarás una explicación casi idéntica allí jeje)
+
 ## 1. Enriquecimiento del Modelo de Dominio
 Se ha introducido la lista de canciones favoritas (`favouriteSongs`) directamente dentro de la clase `User`, junto con el método de comportamiento para gestionarlas (`addFavouriteSong`).
 
